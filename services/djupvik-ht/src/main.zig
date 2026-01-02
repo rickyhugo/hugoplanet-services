@@ -1,10 +1,10 @@
 const std = @import("std");
-const crawl_space_ht_sensor = @import("crawl_space_ht_sensor");
+const djupvik_ht = @import("djupvik_ht");
 
 pub fn main() !void {
     // Prints to stderr, ignoring potential errors.
     std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
-    try crawl_space_ht_sensor.bufferedPrint();
+    try djupvik_ht.bufferedPrint();
 }
 
 test "simple test" {
