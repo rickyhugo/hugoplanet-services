@@ -25,3 +25,5 @@ test "fuzz example" {
     };
     try std.testing.fuzz(Context{}, Context.testOne, .{});
 }
+
+// data structure: {"addr":"0c:ef:f6:f2:2b:b3","rssi":-79,"local_name":"","service_data":{"encryption":false,"BTHome_version":2,"pid":186,"battery":92,"humidity":61,"temperature":2.6}}

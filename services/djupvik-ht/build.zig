@@ -57,6 +57,12 @@ pub fn build(b: *std.Build) void {
     //
     // If neither case applies to you, feel free to delete the declaration you
     // don't need and to put everything under a single module.
+    // Get the mqtt dependency
+    const mqtt_dep = b.dependency("mqtt", .{
+        .target = target,
+        .optimize = optimize,
+    });
+
     const exe = b.addExecutable(.{
         .name = "djupvik_ht",
         .root_module = b.createModule(.{
@@ -79,6 +85,7 @@ pub fn build(b: *std.Build) void {
                 // can be extremely useful in case of collisions (which can happen
                 // importing modules from different packages).
                 .{ .name = "djupvik_ht", .module = mod },
+                .{ .name = "mqtt", .module = mqtt_dep.module("mqtt") },
             },
         }),
     });
