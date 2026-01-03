@@ -1,5 +1,4 @@
 const std = @import("std");
-const net = std.net;
 
 const mqtt = @import("mqtt");
 
