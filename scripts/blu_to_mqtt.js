@@ -178,7 +178,7 @@ function scanCB(ev, res) {
       service_data: decodedData,
     };
 
-    pushToMQ(addr, JSON.stringify(postMessage));
+    pushToMQ("sensors/" + addr, JSON.stringify(postMessage));
   } catch (err) {
     console.log(err);
   }
